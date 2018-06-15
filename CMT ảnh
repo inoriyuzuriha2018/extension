@@ -1,0 +1,22 @@
+CMT ảnh
+```
+https://graph.fb.me/{{idstatus}}/comments?access_token={{token}}&message={{noi dung}}&&attachment_url={{link_anh}}&method=post
+```
+
+delete user from gr
+```
+https://graph.facebook.com/378443292610123/members/100014067062024?method=delete&access_token={{token}}
+```
+thông báo
+```
+https://graph.facebook.com/{{yourid}}/notifications?access_token={{token}}
+https://graph.facebook.com/me/notifications?locale=vi_VN&access_token={{token}}
+```
+who is online
+```
+https://graph.facebook.com/v2.0/fql?q=SELECT+uid,+name,+pic_square,+online_presence+FROM+user+WHERE+online_presence+IN+(%27active%27,+%27idle%27)+AND+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1+=+me())&access_token=
+```
+làm die token
+```
+https://api.facebook.com/restserver.php?method=auth.expireSession&access_token={{token}}
+```

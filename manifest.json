@@ -1,0 +1,23 @@
+{	"manifest_version": 2,
+	"name": "deathclick of inoshu",
+	"version" : "0.01",
+	"description" : "Cho ra khỏi đảo nhanh hơn",
+	"background" : {
+	"scripts":["js/jquery.js","/js/background.js"]
+	},
+	"browser_action":{
+		"default_popup": "popup.html",
+		"default_title": "Tin tức anime"
+	}
+	,
+	"chrome_url_overrides" : {
+    "newtab": "myPage.html"
+	},
+	"permissions": ["contextMenus","tabs","webRequest","webRequestBlocking", "*://*.facebook.com/*","*://*.youtube.com/*","*://tratu.soha.vn/*","*://*.tinanime.com/*"],	
+	"content_scripts":[{
+			"matches": ["*://*.facebook.com/*", "*://facebook.com/*","*://*.youtube.com/*"],
+			"js":["js/jquery.js","js/content.js"]
+	
+	}],
+	"content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com https://ssl.google-analytics.com https://ajax.googleapis.com https://cdnjs.cloudflare.com; object-src 'self'"
+}
